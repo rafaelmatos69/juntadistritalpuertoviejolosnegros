@@ -1,0 +1,64 @@
+(function ($, root, undefined) {
+
+	$(function () {
+
+		'use strict';
+
+		jQuery(".menu-side a[href*='#']").attr("href", "javascript:void(0);");
+		jQuery(".menu-side a[href*='transparencia']").attr("target", "_blank");
+		jQuery(".interna img").addClass("img-responsive");
+		jQuery(".interna table").addClass("table");
+
+		jQuery(".servicios img").addClass("get-color");
+
+		jQuery(".la-menu .menu a[href*='#']").attr("href", "javascript:void(0);");
+
+		jQuery(".controles-m button").click(function(){
+	        jQuery(".la-menu ul:eq(0)").slideToggle();
+	    });
+
+	    jQuery('.la-menu ul .sub-menu > a').attr("href", "JavaScript:void(0);");
+
+		jQuery('.interna iframe, .interna video, .interna embed, .interna object').parent().addClass('embed-responsive embed-responsive-16by9');
+		jQuery('.interna iframe').removeAttr('width').removeAttr('height');
+
+	    jQuery(".la-menu .menu-item-has-children").click(function(){
+			$(this).find('ul').slideToggle();
+		});
+
+		if($(window).width() < 767){
+	        $('.slider .widget-w:last-child').appendTo('.la-slider');
+		} else {
+
+		}
+
+		$('form').on('click', '.submit', function() {
+			var mail = $("input[name='email']").val();
+			$('form').attr('action',"mailto:" + mail);
+		});
+
+		jQuery('.get-color').primaryColor({
+			callback: function(color) {
+				jQuery(this)
+					.parents('.servicios .uk-panel-space')
+					.css('background-color', 'rgba('+color+',0.2)')
+					.attr('data-color', color);
+			}
+		});
+
+		jQuery('.servicios .uk-panel-space').hover(function(input){
+			$(this).css({
+				'background-color' : `rgb(${input.currentTarget.attributes[1].nodeValue})`
+			});
+		}, function(output){
+			$(this).css({
+				'background-color' : `rgba(${output.currentTarget.attributes[1].nodeValue}, 0.2)`
+			});
+		});
+
+
+
+	});
+
+
+})(jQuery, this);

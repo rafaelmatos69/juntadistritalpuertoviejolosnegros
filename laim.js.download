@@ -1,0 +1,27 @@
+(function ($, root, undefined) {
+
+	$(function () {
+
+		'use strict';
+
+
+		jQuery('.laim').magnificPopup({
+			type: 'image',
+			closeBtnInside: false,
+			mainClass: 'mfp-with-zoom mfp-img-mobile',
+
+			image: {
+				verticalFit: true,
+			},
+
+			gallery: {
+				enabled: true
+			},
+		});
+
+
+
+	});
+
+
+})(jQuery, this);

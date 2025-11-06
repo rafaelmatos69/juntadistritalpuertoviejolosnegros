@@ -1,0 +1,37 @@
+@media print {
+    header,
+    footer,
+    .menu-side,
+    .header-mobile,
+    .ctrl-mobile,
+    .tools,
+    .repdomi,
+    .logo,
+    .comentarios,
+    .btn-solicitar,
+    .btn-interes,
+    .cosas-extras {
+        display: none !important;
+    }
+    .interna-servicios .post-header,
+    .interna .post-header {
+        margin-bottom: 0 !important;
+    }
+    a[href]:after {
+        content: "" !important;
+    }
+    .cover img {
+        height: auto !important;
+        width: 100% !important;
+        object-fit: contain;
+    }
+    .cover {
+        height: auto !important;
+    }
+    .interna-servicios .botonesInformacion .botonInfo {
+        border: solid 1px;
+    }
+    .interna-servicios .botonInfo i {
+        font-size: 72px;
+    }
+}
